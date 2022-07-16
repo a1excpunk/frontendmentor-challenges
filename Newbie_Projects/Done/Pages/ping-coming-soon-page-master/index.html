@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Ping coming soon page</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="ping logo">
+    <h1><span>We are launching</span> soon!</h1>
+    <p class="subscribe-text">Subscribe and get notified</p>
+  </header>
+  <section>
+    <form class="email-input">
+      <input type="email" placeholder="Your email address..."  class="email">
+      <em class="error-message">Please provide a valid email address</em>
+      <button class="btn-notify" type="submit">Notify Me</button>
+    </form>
+  </section>
+  <img src="./images/illustration-dashboard.png" alt="dashboard illustration" class="hero-img" width="100%">
+  <footer>
+    <div>
+      <div class="social-media">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-twitter"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </div>
+      <p class="copy">&copy; Copyright Ping. All rights reserved.</p>
+    </div>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/a1excpunk">A1ex</a>.
+    </p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    let errMsg = document.querySelector('.error-message');
+    let email = document.querySelector('.email');
+    let emailSubmit = document.querySelector('.btn-notify');
+    let regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    emailSubmit.addEventListener("click", (e) => {
+      if(!email.value.match(regexp)){
+        e.preventDefault();
+        errMsg.style.display = "block";
+        email.style.borderColor = "var(--secondary-Light_Red)"
+      }
+    })
+  </script>
+</body>
+
+</html>

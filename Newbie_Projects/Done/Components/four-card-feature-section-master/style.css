@@ -1,0 +1,152 @@
+:root {
+    --primary-Red: hsl(0, 78%, 62%);
+    --primary-Cyan: hsl(180, 62%, 55%);
+    --primary-Orange: hsl(34, 97%, 64%);
+    --primary-Blue: hsl(212, 86%, 64%);
+
+    --netral-Very_Dark_Blue: hsl(234, 12%, 34%);
+    --netral-Grayish_Blue: hsl(229, 6%, 66%);
+    --netral-Very_Light_Gray: hsl(0, 0%, 98%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: var(--netral-Very_Light_Gray);
+    color: var(--netral-Very_Dark_Blue);
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 80px 10px 60px 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+header h1 {
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+header p:first-of-type {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.header-desc, .card>p {
+    color: var(--netral-Grayish_Blue);
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 10px;
+}
+
+.vertical-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.card {
+    border-radius: 5px 5px 8px 8px;
+    border-top: 4px solid;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    max-width: 350px;
+    box-shadow: 2px 10px 15px hsla(198, 100%, 22%, 0.158);
+    transition-duration: 300ms;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card img {
+    align-self: flex-end;
+    margin-top: 30px;
+}
+
+.supervisor {
+    border-color: var(--primary-Cyan);
+}
+
+.supervisor:hover > h3{
+    transition-duration: 300ms;
+    color: var(--primary-Cyan);
+}
+
+.team-builder {
+    border-color: var(--primary-Red);
+}
+
+.team-builder:hover > h3{
+    transition-duration: 300ms;
+    color: var(--primary-Red);
+}
+
+.karma {
+    border-color: var(--primary-Orange);
+}
+
+.karma:hover > h3{
+    transition-duration: 300ms;
+    color: var(--primary-Orange);
+}
+
+.calculator {
+    border-color: var(--primary-Blue);
+}
+
+.calculator:hover > h3{
+    transition-duration: 300ms;
+    color: var(--primary-Blue);
+}
+
+footer {
+    height: 100px;
+    text-align: center;
+}
+
+.attribution {
+    padding-top: 50px;
+    font-size: 12px;
+    color: var(--primary-Blue);
+}
+
+.attribution a {
+    color: var(--primary-Orange);
+}
+
+@media screen and (max-width:1100px) {
+    header {
+        min-width: 250px;
+    }
+
+    .cards {
+        flex-direction: column;
+        min-width: 250px;
+    }
+}

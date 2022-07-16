@@ -1,0 +1,149 @@
+:root {
+    --primery-color_Soft-Blue: hsl(215, 51%, 70%);
+    --primery-color_Cyan: hsl(178, 100%, 50%);
+    --primery-color_Cyan_See_Through: hsla(178, 100%, 50%, 0.5);
+    --neutral-color_Very_Dark_Blue_Main_BG: hsl(217, 54%, 11%);
+    --neutral-color_Very_Dark_Blue_Card_BG: hsl(216, 50%, 16%);
+    --neutral-color_Very_Dark_Blue_Line: hsl(215, 32%, 27%);
+    --on-hover-transition-time: 300ms;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--neutral-color_Very_Dark_Blue_Main_BG);
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* main content of card */
+.card-wrapper {
+    background-color: var(--neutral-color_Very_Dark_Blue_Card_BG);
+    width: 350px;
+    height: max-content;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 15px;
+    box-shadow: 15px 15px 15px hsla(215, 100%, 7%, 0.5), -1px -1px 10px hsla(215, 100%, 7%, 0.5);
+    margin-bottom: 50px;
+    min-width: 300px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+}
+
+.hero-img {
+    position: relative;
+    cursor: pointer;
+    height: 310px;
+}
+
+.hero-img:hover>img+.on-hover {
+    display: block;
+    animation: view 500ms ease-in forwards;
+
+}
+
+@keyframes view {
+    0%{
+        background-color: hsla(178, 100%, 50%, 0.1);
+    }
+}
+
+.hero-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.on-hover {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    background-color: var(--primery-color_Cyan_See_Through);
+}
+
+.on-hover div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-name:hover {
+    cursor: pointer;
+    color: var(--primery-color_Cyan);
+    transition-duration: var(--on-hover-transition-time);
+}
+
+.item-description {
+    color: var(--primery-color_Soft-Blue);
+}
+
+.balance-and-time {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.balance {
+    color: var(--primery-color_Cyan);
+}
+
+.time-left {
+    color: var(--primery-color_Soft-Blue);
+}
+
+/* footer */
+footer {
+    margin: 0 20px 30px 20px;
+    padding-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-top: 1.5px solid hsla(215, 52%, 70%, 0.2);
+}
+
+.author-avatar {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 35px;
+}
+
+.author {
+    color: var(--primery-color_Soft-Blue);
+}
+
+.author-name:hover {
+    cursor: pointer;
+    color: var(--primery-color_Cyan);
+    transition-duration: var(--on-hover-transition-time);
+}
+
+/* attribution */
+.attribution {
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+}
+
+.attribution a {
+    color: var(--primery-color_Soft-Blue);
+}

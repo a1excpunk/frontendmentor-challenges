@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: hsl(217, 19%, 24%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card-wrapper {
+      background-color: hsl(217, 19%, 38%);
+      max-width: 550px;
+      border-radius: 10px;
+      padding: 0 40px;
+      box-shadow: 5px 5px 15px hsla(0, 0%, 0%, 0.1), -1px -1px 15px hsla(0, 0%, 0%, 0.2);
+      margin-bottom: 150px;
+    }
+
+    .adviceId {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: hsl(150, 100%, 66%);
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .advice {
+      text-align: center;
+      color: hsl(193, 38%, 86%);
+      font-size: 28px;
+      padding: 25px 0;
+    }
+
+    .advice-underline {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: max-content;
+      overflow: hidden;
+
+    }
+
+    .advice-underline>span {
+      width: 100%;
+      border-bottom: 1px solid hsla(193, 38%, 86%, 0.4);
+      margin: 20px 0;
+    }
+
+    .advice-underline-img-wrapper {
+      background-color: hsl(217, 19%, 38%);
+      position: absolute;
+      z-index: 2;
+      width: 55px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .dice-wrapper {
+      background-color: hsl(150, 100%, 66%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      position: relative;
+      border-radius: 50%;
+      margin: auto;
+      top: 30px;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+    }
+
+    .dice-wrapper:hover {
+      box-shadow: 0 0 30px hsl(150, 100%, 66%);
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1), 300ms;
+      animation-name: roll;
+      animation-duration: 700ms;
+    }
+
+    .dice-wrapper:active {
+      transition-duration: 300ms;
+      transform: scale(.9);
+    }
+
+    @keyframes roll {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .attribution {
+      font-size: 12px;
+      color: hsl(193, 38%, 86%);
+    }
+
+    .attribution a {
+      color: hsl(150, 100%, 66%);
+    }
+
+
+    .attribution a:hover {
+      text-shadow: 0 0 10px hsl(150, 100%, 66%);
+    }
+
+    @media screen and (max-width:550px) {
+      .card-wrapper {
+        margin: auto 20px;
+        min-width: 100px;
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card-wrapper">
+    <h1 class="adviceId">advice #</h1>
+    <p class="advice"></p>
+    <span class="advice-underline">
+      <div class="advice-underline-img-wrapper">
+        <img src="./images/pattern-divider-desktop.svg" alt="patternv divider">
+      </div>
+      <span></span>
+    </span>
+    <div class="dice-wrapper">
+      <img src="./images/icon-dice.svg" alt="dice">
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/a1excpunk">A1ex</a>.
+  </div>
+</body>
+
+<script>
+  let id = document.createElement("span");
+  let advice = document.createElement("span");
+
+  function slip(slipId, slipAdvice) {
+    id.innerText = slipId;
+    document.querySelector('.adviceId').appendChild(id);
+
+    advice.innerText = `"${slipAdvice}"`;
+    document.querySelector(".advice").appendChild(advice);
+  }
+
+  function getSlip() {
+    fetch("https://api.adviceslip.com/advice")
+      .then((response) => response.json())
+      .then((json) => slip(json.slip.id, json.slip.advice))
+      .catch(err => alert(err))
+  }
+
+  getSlip();
+
+  document.querySelector('.dice-wrapper').addEventListener('click', getSlip)
+</script>
+
+</html>

@@ -1,0 +1,134 @@
+:root {
+    --primery_Very_Dark_Cyan: hsl(179, 100%, 13%);
+    --primery_Bright_Orange: hsl(31, 77%, 52%);
+    --primery_Dark_Cyan: hsl(184, 100%, 22%);
+    --neutral_Transparent_White: hsla(0, 0%, 100%, 0.75);
+    --neutral_Very_Light_Gray: hsl(0, 0%, 95%)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 13px;
+    font-family: 'Lexend Deca', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--neutral_Very_Light_Gray);
+}
+
+main {
+    width: 800px;
+    display: flex;
+}
+
+.card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.card.sedans {
+    background-color: var(--primery_Bright_Orange);
+    border-radius: 10px 0 0 10px;
+}
+
+.card.suvs {
+    background-color: var(--primery_Dark_Cyan);
+}
+
+.card.luxury {
+    background-color: var(--primery_Very_Dark_Cyan);
+    border-radius: 0 10px 10px 0;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.card-title {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: var(--neutral_Very_Light_Gray);
+}
+
+.card-descr {
+    color: var(--neutral_Transparent_White);
+    line-height: 23px;
+}
+
+.btn-learn-more {
+    font-family: 'Lexend Deca', sans-serif;
+    border: 3px solid var(--neutral_Very_Light_Gray);
+    background-color: var(--neutral_Very_Light_Gray);
+    border-radius: 25px;
+    align-self: flex-start;
+    padding: 12px 30px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.sedans .btn-learn-more {
+    color: var(--primery_Bright_Orange);
+}
+
+.suvs .btn-learn-more {
+    color: var(--primery_Dark_Cyan);
+}
+
+.luxury .btn-learn-more {
+    color: var(--primery_Very_Dark_Cyan);
+}
+
+.btn-learn-more:hover{
+    color: var(--neutral_Very_Light_Gray);
+    background-color: transparent;
+    transition-duration: 300ms;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    color: var(--primery_Dark_Cyan);
+}
+
+.attribution a {
+    color: var(--primery_Very_Dark_Cyan);
+}
+
+@media screen and (max-width:800px) {
+    body{
+       position: relative;
+       padding: 50px 0;
+    }
+    main{
+        flex-direction: column;
+        width: 300px;
+    }
+
+    .card{
+        padding: 50px;
+        gap: 30px;
+    }
+
+    .card.sedans {
+        border-radius: 10px 10px 0 0 ;
+    }
+    
+    .card.luxury {
+        border-radius: 0 0 10px 10px;
+    }
+
+}

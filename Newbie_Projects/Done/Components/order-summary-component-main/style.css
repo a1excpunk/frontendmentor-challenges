@@ -1,0 +1,168 @@
+:root {
+    --primary_Pale_Blue: hsl(225, 100%, 94%);
+    --primary_Bright_Blue: hsl(245, 75%, 52%);
+    --neutral_Very_Pale_Blue: hsl(225, 100%, 98%);
+    --neutral_Desaturated_Blue: hsl(224, 23%, 55%);
+    --neutral_Dark_Blue: hsl(223, 47%, 23%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline-color:var(--neutral_Desaturated_Blue) ;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary_Pale_Blue);
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+
+}
+
+p{
+    font-size: 16px;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.card{
+
+    background-color: hsl(255, 100%, 100%);
+    width: 400px;
+    border-radius: 0 0 10px 10px;
+    min-width: 280px;
+    margin: 20px 10px;
+
+}
+
+.hero-img{
+    width: 100%;
+
+}
+
+.hero-img img{
+    width: 100%;
+    border-radius: 10px 10px 0 0 ;
+}
+
+.card-content{
+    margin: 30px 40px 40px 40px;
+    text-align: center;
+}
+
+@media screen and (max-width:350px) {
+    .card-content{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.card-title{
+    margin-bottom: 15px;
+    color: var(--neutral_Dark_Blue);
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.card-desc{
+    color: var(--neutral_Desaturated_Blue);
+}
+
+.plan-section{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 30px 0;
+    position: relative;
+    background-color: var(--neutral_Very_Pale_Blue);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.annual-plan{
+    font-weight: 900;
+    color: var(--neutral_Dark_Blue);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.plan-price{
+    color: var(--neutral_Desaturated_Blue);
+    font-size: 14px;
+}
+
+.btn-change-annual-plan{
+    position: absolute;
+    right: 20px;
+    text-decoration: underline;
+    font-weight: 700;
+    color: var(--primary_Bright_Blue);
+    font-size: 14px;
+    transition: color 400ms ease-out;
+}
+
+.btn-change-annual-plan:hover{
+    text-decoration: none;
+    color: var(--neutral_Desaturated_Blue);
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.btn-payment{
+    color: var(--neutral_Very_Pale_Blue);
+    background-color: var(--primary_Bright_Blue);
+    padding: 10px 0;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: 0px 3px 10px var(--primary_Bright_Blue);
+    position: relative;
+    transition: opacity 300ms ease-in-out;
+}
+
+.btn-payment:hover{
+   opacity: 0.9;
+}
+
+.btn-payment:active{
+    box-shadow: inset 0px 3px 10px var(--primary_Bright_Blue);
+    top: 1px;
+}
+
+.btn-cancel-order{
+    font-weight: 700;
+    color: var(--neutral_Desaturated_Blue);
+}
+
+.btn-cancel-order:hover{
+    color: var(--neutral_Dark_Blue);
+}
+
+.btn-payment:hover,.btn-cancel-order:hover, .btn-change-annual-plan:hover{
+    transition-duration: 300ms;
+}
+
+.attribution{
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+}
+
+.attribution a{
+    color: var(--neutral_Dark_Blue);
+}

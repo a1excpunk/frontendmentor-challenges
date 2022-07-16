@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="dashboard">
+    <div class="user-card">
+      <div class="user-info">
+        <img src="./images/image-jeremy.png" alt="user photo">
+        <span>Report for</span>
+        <h1 class="user-name">Jeremy Robson</h1>
+      </div>
+      <div class="frequency">
+        <button class="btn day">Daily</button>
+        <button class="btn week">Weekly</button>
+        <button class="btn month">Monthly</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header work">
+        <img src="./images/icon-work.svg" alt="suitcase icon">
+      </div>
+      <h2 class="card-category">Work <img src="./images/icon-ellipsis.svg" alt="icon ellipsis, for showing more"></h2>
+      <div id="hrs-day">
+        <div class="current-hrs">
+          5hrs
+        </div>
+        <div class="prev-hrs">
+          Last Day - 7hrs
+        </div>
+      </div>
+      <div id="hrs-week">
+        <div class="current-hrs">
+          32hrs
+        </div>
+        <div class="prev-hrs">
+          Last Week -36hrs
+        </div>
+      </div>
+      <div id="hrs-month">
+        <div class="current-hrs">
+          103hrs
+        </div>
+        <div class="prev-hrs">
+          Last Month - 128hrs
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/a1excpunk">A1ex</a>.
+    </div>
+  </footer>
+</body>
+
+</html>

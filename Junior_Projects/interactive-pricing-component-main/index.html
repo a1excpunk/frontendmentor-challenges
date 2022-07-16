@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive pricing component</title>
+</head>
+
+<body>
+  <header>
+    <h1>Simple, traffic-based pricing</h1>
+    <h4> Sign-up for our 30-day trial. No credit card required. </h4>
+  </header>
+  <main class="card-wrapper">
+    <section class="card-top">
+      <div>
+        <div id="page-views">Pageviews</div>
+        <div class="price-per-month">$<span id="price"></span> /month</div>
+      </div>
+      <input type="range" id="price-range">
+      <div>
+        <span> Monthly Billing</span>
+        <input type="checkbox" id="billing">
+        <span>Yearly Billing  <span class="discount">25% discount</span></span>
+      </div>
+    </section>
+    <section class="card-bottom">
+      <div class="pros">
+        <ul>
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
+        </ul>
+      </div>
+      <div class="btn">
+        <button type="button" aria-label="Start Trial">Start my trial</button>
+      </div>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/a1excpunk">A1ex</a>.
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+:root{
+    --primary-Dark_Blue: hsl(240, 38%, 20%);
+    --primary-Grayish_Blue: hsl(240, 18%, 77%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+main{
+
+}
+
+.profile-card{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    background-color: aqua;
+    color: var(--primary-Dark_Blue);
+    margin-bottom: 30px;
+}
+ 
+.testimonial{
+    font-size: 32px;
+    font-weight: 300;
+}
+
+
+
+
+footer{
+    font-size: 13px;
+    color: var(--primary-Dark_Blue);
+}
+
+footer a{
+    color: var(--primary-Grayish_Blue);
+}

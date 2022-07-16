@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <img src="./images/illustration-box-desktop.svg" alt="illustration-box" class="illustration-box-desktop desktop">
+
+    <section class="ilustration">
+
+      <picture>
+        <source media="(min-width: 800px)" srcset="./images/illustration-woman-online-desktop.svg" >
+        <img src="./images/illustration-woman-online-mobile.svg" alt="illustration-woman-online"
+          class=" illustration-woman-online-mobile illustration-woman-online-desktop">
+      </picture>
+
+      <picture>
+        <source media="(min-width:800px )" srcset="./images/bg-pattern-desktop.svg">
+        <img src="./images/bg-pattern-mobile.svg" alt="pattern" class="bg-pattern-mobile bg-pattern-desktop">
+      </picture>
+
+      <!-- <img src="./images/illustration-woman-online-desktop.svg" alt="illustration-woman-online" class="desktop illustration-woman-online-desktop">
+
+      <img src="./images/illustration-woman-online-mobile.svg" alt="illustration-woman-online-mobile"
+        class="mobile illustration-woman-online-mobile"> -->
+
+      <!-- <img src="./images/bg-pattern-desktop.svg" alt="pattern" class="desktop bg-pattern-desktop">
+
+      <img src="./images/bg-pattern-mobile.svg" alt="bg-pattern-mobile" class="mobile bg-pattern-mobile"> -->
+
+    </section>
+
+    <section class="faq-wrapper">
+      <h1>FAQ</h1>
+
+      <div class="question">
+        <h2>How many team members can I invite? <img src="./images/icon-arrow-down.svg"
+            alt="arrow icon, dropdown question"> </h2>
+        <p class="answer"> You can invite up to 2 additional users on the Free plan. There is no limit on
+          team members for the Premium plan.</p>
+      </div>
+
+      <div class="question">
+        <h2>What is the maximum file upload size? <img src="./images/icon-arrow-down.svg"
+            alt="arrow icon, dropdown question"> </h2>
+        <p class="answer"> No more than 2GB. All files in your account must fit your allotted storage space.</p>
+      </div>
+
+      <div class="question">
+        <h2>How do I reset my password? <img src="./images/icon-arrow-down.svg" alt="arrow icon, dropdown question">
+        </h2>
+        <p class="answer">Click “Forgot password” from the login page or “Change password” from your profile page.
+          A reset link will be emailed to you.</p>
+      </div>
+
+      <div class="question">
+        <h2>Can I cancel my subscription? <img src="./images/icon-arrow-down.svg" alt="arrow icon, dropdown question">
+        </h2>
+        <p class="answer">Yes! Send us a message and we’ll process your request no questions asked.</p>
+      </div>
+
+      <div class="question">
+        <h2>Do you provide additional support? <img src="./images/icon-arrow-down.svg"
+            alt="arrow icon, dropdown question"> </h2>
+        <p class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/a1excpunk">A1ex</a>.
+  </div>
+</body>
+<script>
+  let questions = document.querySelectorAll('.question');
+  let answers = document.querySelectorAll('.answer');
+  for (const question of questions) {
+    let answerShown = question.children[1];
+    let questionActive = question.children[0];
+    let icon = questionActive.children[0];
+    question.addEventListener('click', (e) => {
+      if(answerShown.style.opacity == "1"){
+        answerShown.style.height = "0";
+        answerShown.style.opacity = "0";
+        answerShown.style.transform = "translateY(-20px)";
+        answerShown.style.marginTop = "0px";
+
+        questionActive.style.fontWeight = "normal";
+        icon.style.transform = "rotate(0deg)";
+      }else{
+        answerShown.style.height = "auto";
+        answerShown.style.opacity = "1";
+        answerShown.style.transform = "translateY(0)";
+        answerShown.style.marginTop = "20px";
+
+        questionActive.style.fontWeight = "bold";
+        icon.style.transform = "rotate(180deg)";
+      }
+    })
+  }
+</script>
+
+</html>

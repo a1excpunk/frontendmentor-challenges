@@ -1,0 +1,49 @@
+:root{
+    --primary-Blue: hsl(246, 80%, 60%);
+    --primary-Light_red_work: hsl(15, 100%, 70%);
+    --primary-Soft_blue_play: hsl(195, 74%, 62%);
+    --primary-Light_red_study: hsl(348, 100%, 68%);
+    --primary-Lime_green_exercise: hsl(145, 58%, 55%);
+    --primary-Violet_social: hsl(264, 64%, 52%);
+    --primary-Soft_orange: hsl(43, 84%, 65%);
+
+    --neutral-Very_dark_blue: hsl(226, 43%, 10%);
+    --neutral-Dark_blue: hsl(235, 46%, 20%);
+    --neutral-Desaturated_blue: hsl(235, 45%, 61%);
+    --neutral-Pale_Blue: hsl(236, 100%, 87%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    background-color: var(--neutral-Very_dark_blue);
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
+
+footer{
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.attribution{
+    font-size: 13px;
+    color: var(--neutral-Pale_Blue);
+}
+
+.attribution a{
+    color: var(--primary-Light_red_work);
+}
