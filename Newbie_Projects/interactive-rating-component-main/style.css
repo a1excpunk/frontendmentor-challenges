@@ -87,6 +87,7 @@ h1, h2 {
 .rating-btn:hover {
     background-color: var(--Orange);
     color: var(--white);
+    transition-duration: 500ms;
 }
 
 .rating-btn-rated {
@@ -110,10 +111,11 @@ h1, h2 {
 }
 
 .submit:hover {
+    animation: pulse 1200ms;
     background-color: var(--white);
     color: var(--Orange);
+    transition-duration: 500ms;
 }
-
 
 /* Thank you state */
 
@@ -136,7 +138,7 @@ h1, h2 {
     margin-bottom: 0;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -152,4 +154,32 @@ h1, h2 {
 
 .attribution a {
     color: var(--Orange);
+}
+
+
+/* Animations */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.05);
+    }
+
+    40% {
+        transform: scale(1.06);
+    }
+
+    60% {
+        transform: scale(1.07);
+    }
+    30%,
+    50%,
+    70%,
+    80%,
+    95% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
