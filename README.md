@@ -4,7 +4,7 @@
 
 ###### Components
 
-[NFT Preview Card](https://a1excpunk.github.io/frontendmentor-challenges/nft-preview-card-component-main/)
+[NFT Preview Card](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/nft-preview-card-component-main/)
 
 [Article Preview Card](https://a1excpunk.github.io/fronEndMentor/Article_Preview_Component_Master/)
 
