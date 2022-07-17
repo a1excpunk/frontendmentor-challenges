@@ -26,6 +26,9 @@
 
 [FAQ Accordion Card](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/faq-accordion-card-main/)
 
+[Interactive Rating Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/interactive-rating-component-main/)
+
+
 ###### Pages
 
 [Ping Comming Soon](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Pages/ping-coming-soon-page-master/)
