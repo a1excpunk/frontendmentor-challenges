@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive rating component</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <!-- Rating state start -->
+    <article class="rating-card">
+      <section>
+        <div class="star-icon-wrapper">
+          <img src="./images/icon-star.svg" alt="star-icon" class="star-icon">
+        </div>
+        <h1> How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!
+        </p>
+      </section>
+      <section>
+        <div class="rating-btns">
+          <span class="rating-btn" value="1">1</span>
+          <span class="rating-btn" value="2">2</span>
+          <span class="rating-btn" value="3">3</span>
+          <span class="rating-btn" value="4">4</span>
+          <span class="rating-btn" value="5">5</span>
+        </div>
+        <button type="submit" class="submit">Submit</button>
+      </section>
+    </article>
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+    <section class="thank-you-state-card hidden">
+      <div>
+        <img src="./images/illustration-thank-you.svg" alt="illustration thank you" class="illustration-thank-you">
+      </div>
+      <div class="selected-rating-wrapper">
+        <p>
+          You selected
+          <span id="selected-rating">0</span>
+          out of 5
+        </p>
+      </div>
+      <h2>Thank you!</h2>
+      <p>
+        We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!
+      </p>
+      <!-- Thank you state end -->
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by
+    <a href="https://www.frontendmentor.io/profile/a1excpunk" target="_blank">A1ex</a>.
+  </div>
+</body>
+<script>
+  const ratingBtns = [...document.querySelectorAll('.rating-btn')];
+  const submitBtn = document.getElementsByClassName('submit')[0];
+  const selectedRating = document.getElementById('selected-rating');
+  const ratingCard = document.querySelector('.rating-card');
+  const thankYouCard = document.querySelector('.thank-you-state-card');
+  let rating = 0;
+
+  ratingBtns.forEach(element => {
+    element.addEventListener('click', (event) => {
+      for (let i = 0; i < ratingBtns.length; i++) {
+        ratingBtns[i].classList.remove('rating-btn-rated');
+      }
+      element.classList.add('rating-btn-rated');
+      rating = event.currentTarget.innerText;
+    })
+  });
+
+  submitBtn.addEventListener('click', () => {
+    ratingCard.classList.add('hidden');
+    thankYouCard.classList.remove('hidden');
+    selectedRating.innerText = rating;
+  })
+</script>
+
+</html>
