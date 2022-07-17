@@ -28,11 +28,11 @@
       </section>
       <section>
         <div class="rating-btns">
-          <input type="text" value="1" disabled>
-          <input type="text" value="2" disabled>
-          <input type="text" value="3" disabled>
-          <input type="text" value="4" disabled>
-          <input type="text" value="5" disabled>
+          <span class="rating-btn" value="1">1</span>
+          <span class="rating-btn" value="2">2</span>
+          <span class="rating-btn" value="3">3</span>
+          <span class="rating-btn" value="4">4</span>
+          <span class="rating-btn" value="5">5</span>
         </div>
         <button type="submit" class="submit">Submit</button>
       </section>
@@ -40,14 +40,14 @@
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <section class="thank-you-state-card">
+    <section class="thank-you-state-card hidden">
       <div>
         <img src="./images/illustration-thank-you.svg" alt="illustration thank you" class="illustration-thank-you">
       </div>
       <div class="selected-rating-wrapper">
         <p>
           You selected
-          <span class="selected-rating">0</span>
+          <span id="selected-rating">0</span>
           out of 5
         </p>
       </div>
@@ -67,5 +67,29 @@
     <a href="https://www.frontendmentor.io/profile/a1excpunk" target="_blank">A1ex</a>.
   </div>
 </body>
+<script>
+  const ratingBtns = [...document.querySelectorAll('.rating-btn')];
+  const submitBtn = document.getElementsByClassName('submit')[0];
+  const selectedRating = document.getElementById('selected-rating');
+  const ratingCard = document.querySelector('.rating-card');
+  const thankYouCard = document.querySelector('.thank-you-state-card');
+  let rating = 0;
+
+  ratingBtns.forEach(element => {
+    element.addEventListener('click', (event) => {
+      for (let i = 0; i < ratingBtns.length; i++) {
+        ratingBtns[i].classList.remove('rating-btn-rated');
+      }
+      element.classList.add('rating-btn-rated');
+      rating = event.currentTarget.innerText;
+    })
+  });
+
+  submitBtn.addEventListener('click', () => {
+    ratingCard.classList.add('hidden');
+    thankYouCard.classList.remove('hidden');
+    selectedRating.innerText = rating;
+  })
+</script>
 
 </html>

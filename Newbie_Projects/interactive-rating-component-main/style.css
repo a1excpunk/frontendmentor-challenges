@@ -58,11 +58,6 @@ h1, h2 {
     display: grid;
     place-content: center;
     border-radius: 50%;
-    cursor: pointer;
-}
-
-.star-icon-wrapper:hover{
-    background-color: var(--white);
 }
 
 .rating-card p, .thank-you-state-card p {
@@ -76,13 +71,12 @@ h1, h2 {
     justify-content: space-between;
 }
 
-input {
+.rating-btn {
     background-color: #959eac1f;
-    border: none;
     border-radius: 50%;
-    width: max-content;
     width: 45px;
     height: 45px;
+    padding-top: 12px;
     cursor: pointer;
     text-align: center;
     font-size: 1em;
@@ -90,12 +84,12 @@ input {
     font-weight: var(--bold-font-weight);
 }
 
-input:hover {
+.rating-btn:hover {
     background-color: var(--Orange);
     color: var(--white);
 }
 
-.input-state-rated {
+.rating-btn-rated {
     background-color: var(--Medium-Grey);
     color: var(--white);
 }
@@ -124,7 +118,6 @@ input:hover {
 /* Thank you state */
 
 .thank-you-state-card {
-    display: none;
     text-align: center;
 }
 
@@ -141,6 +134,10 @@ input:hover {
 .selected-rating-wrapper p {
     color: var(--Orange);
     margin-bottom: 0;
+}
+
+.hidden{
+    display: none;
 }
 
 /* Attribution */
