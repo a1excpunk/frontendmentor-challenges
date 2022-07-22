@@ -26,6 +26,8 @@
 
 [FAQ Accordion Card](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/faq-accordion-card-main/)
 
+[QR Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/qr-code-component-main/)
+
 ###### Pages
 
 [Ping Comming Soon](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Pages/ping-coming-soon-page-master/)
