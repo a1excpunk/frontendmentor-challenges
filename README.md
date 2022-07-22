@@ -28,6 +28,8 @@
 
 [QR Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/qr-code-component-main/)
 
+[Interactive Rating Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/interactive-rating-component-main/)
+
 ###### Pages
 
 [Ping Comming Soon](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Pages/ping-coming-soon-page-master/)
@@ -42,7 +44,7 @@
 
 [Grid Testimonials Section](https://a1excpunk.github.io/frontendmentor-challenges/Junior_Projects/Done/Components/testimonials-grid-section-main/)
 
-[Advice Generator Card]( https://a1excpunk.github.io/frontendmentor-challenges/Junior_Projects/Done/Components/advice-generator-app-main/)
+[Advice Generator Card](https://a1excpunk.github.io/frontendmentor-challenges/Junior_Projects/Done/Components/advice-generator-app-main/)
 
 [Interactive Pricing Card ... in process](https://a1excpunk.github.io/frontendmentor-challenges/Junior_Projects/Done/Components/interactive-pricing-component-main/)
 
@@ -53,6 +55,3 @@
 ###### Apps
 
 [Tip Calculator ... in process](https://a1excpunk.github.io/frontendmentor-challenges/Junior_Projects/Done/Components/tip-calculator-app-main/)
-
-
-
