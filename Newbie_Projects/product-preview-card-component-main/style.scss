@@ -1,0 +1,144 @@
+// Primary
+$Dark_cyan: hsl(158, 36%, 37%);
+$Very_dark_cyan: hsl(159, 39%, 19%);
+$Cream: hsl(30, 38%, 92%);
+
+// Neutral
+$Very_dark_blue: hsl(212, 21%, 14%);
+$Dark_grayish_blue: hsl(228, 12%, 48%);
+$White: hsl(0, 0%, 100%);
+
+$Fraunces: "Fraunces", serif;
+$Montserrat: "Montserrat", sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $Cream;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: $Montserrat;
+  padding: 30px;
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+
+  main {
+    width: 700px;
+    display: flex;
+    background-color: $White;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px hsl(33, 29%, 87%);
+
+    img {
+      width: 50%;
+      border-radius: 10px 0 0 10px;
+    }
+    section {
+      padding: 35px;
+      & > * {
+        margin-bottom: 30px;
+      }
+
+      .title {
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+
+      h1,
+      .new-price {
+        font-family: $Fraunces;
+      }
+
+      h1 {
+        font-size: 35px;
+        line-height: 33px;
+        font-weight: 700;
+        color: $Very_dark_blue;
+      }
+
+      & > p {
+        color: $Dark_grayish_blue;
+        line-height: 25px;
+      }
+
+      .prices {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .new-price {
+          font-size: 20px;
+          color: $Dark_cyan;
+          font-size: 35px;
+        }
+        .old-price {
+          text-decoration: line-through;
+          color: $Dark_grayish_blue;
+        }
+      }
+
+      .add-to-cart-btn {
+        margin-bottom: 0;
+        position: relative;
+        background-color: $Dark_cyan;
+        color: $White;
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        width: 100%;
+        font-family: $Montserrat;
+        font-weight: 500;
+        font-size: 16px;
+        transition-duration: 1000ms;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        cursor: pointer;
+        svg {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          box-shadow: inset 300px 0 $Very_dark_cyan,
+            inset -300px 0 $Very_dark_cyan;
+            color: $Cream;
+        }
+      }
+    }
+  }
+
+  .attribution {
+    margin-top: 30px;
+    color: $Very_dark_blue;
+    a {
+      color: $Dark_cyan;
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    main {
+      flex-direction: column;
+      width: 375px;
+
+      img {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+      }
+    }
+    .mobile {
+      display: block;
+    }
+    .desktop {
+      display: none;
+    }
+  }
+}

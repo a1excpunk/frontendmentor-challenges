@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f2ebe3;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  padding: 30px;
+}
+
+body .mobile {
+  display: none;
+}
+
+body .desktop {
+  display: block;
+}
+
+body main {
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 10px #e7dfd4;
+          box-shadow: 5px 5px 10px #e7dfd4;
+}
+
+body main img {
+  width: 50%;
+  border-radius: 10px 0 0 10px;
+}
+
+body main section {
+  padding: 35px;
+}
+
+body main section > * {
+  margin-bottom: 30px;
+}
+
+body main section .title {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+body main section h1,
+body main section .new-price {
+  font-family: "Fraunces", serif;
+}
+
+body main section h1 {
+  font-size: 35px;
+  line-height: 33px;
+  font-weight: 700;
+  color: #1c232b;
+}
+
+body main section > p {
+  color: #6c7289;
+  line-height: 25px;
+}
+
+body main section .prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+body main section .prices .new-price {
+  font-size: 20px;
+  color: #3c8067;
+  font-size: 35px;
+}
+
+body main section .prices .old-price {
+  text-decoration: line-through;
+  color: #6c7289;
+}
+
+body main section .add-to-cart-btn {
+  margin-bottom: 0;
+  position: relative;
+  background-color: #3c8067;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  -webkit-transition-duration: 1000ms;
+          transition-duration: 1000ms;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  cursor: pointer;
+}
+
+body main section .add-to-cart-btn svg {
+  margin-right: 10px;
+}
+
+body main section .add-to-cart-btn:hover {
+  -webkit-box-shadow: inset 300px 0 #1e4336, inset -300px 0 #1e4336;
+          box-shadow: inset 300px 0 #1e4336, inset -300px 0 #1e4336;
+  color: #f2ebe3;
+}
+
+body .attribution {
+  margin-top: 30px;
+  color: #1c232b;
+}
+
+body .attribution a {
+  color: #3c8067;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  body main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 375px;
+  }
+  body main img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  body .mobile {
+    display: block;
+  }
+  body .desktop {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
