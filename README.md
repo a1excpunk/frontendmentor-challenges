@@ -26,9 +26,11 @@
 
 [FAQ Accordion Card](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/faq-accordion-card-main/)
 
+[Interactive Rating Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/interactive-rating-component-main/)
+
 [QR Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/qr-code-component-main/)
 
-[Interactive Rating Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/interactive-rating-component-main/)
+[Product Preview Card](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/product-preview-card-component-main/)
 
 ###### Pages
 
