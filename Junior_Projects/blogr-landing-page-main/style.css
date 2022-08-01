@@ -26,6 +26,32 @@ button {
           transition-duration: 400ms;
 }
 
+h2,
+h3,
+p {
+  font-family: "Overpass", sans-serif;
+  color: #1f3f5b;
+}
+
+h2 {
+  font-size: 35px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 25px;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: #1f3f5b;
+  font-size: 13px;
+}
+
+.text_light {
+  color: white;
+}
+
 .primary_btn {
   background-color: white;
   color: #ff7a85;
@@ -69,16 +95,17 @@ body .header_section {
   background-repeat: no-repeat;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 143, 112, 0.9)), to(rgba(255, 61, 84, 0.9)));
   background-image: linear-gradient(90deg, rgba(255, 143, 112, 0.9), rgba(255, 61, 84, 0.9));
-  border-bottom-left-radius: 80px;
+  border-bottom-left-radius: 90px;
   position: relative;
+  overflow: hidden;
 }
 
 body .header_section .header_pattern {
   position: absolute;
-  top: -500px;
-  left: 100px;
+  top: -560px;
+  left: 200px;
   width: 120%;
-  overflow: hidden;
+  z-index: -1;
 }
 
 body .header_section header {
@@ -158,6 +185,122 @@ body .header_section .header_content .primary_btn {
   margin-right: 10px;
 }
 
+body .section_one {
+  position: relative;
+}
+
+body .section_one h2 {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  text-align: center;
+}
+
+body .section_one .section_one_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 auto;
+          flex: 2 1 auto;
+  overflow: hidden;
+  padding: 70px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .section_one .section_one_content .section_one_text {
+  margin-bottom: 50px;
+  max-width: 400px;
+}
+
+body .section_one .section_one_content .section_one_text h3 {
+  padding-bottom: 20px;
+}
+
+body .section_one .section_one_content .section_one_text p {
+  line-height: 25px;
+}
+
+body .section_one .section_one_content img {
+  position: relative;
+  left: 220px;
+}
+
+body .section_two {
+  background: url("./images/bg-pattern-circles.svg"), -webkit-gradient(linear, left top, right top, from(#2c2d3f), to(#3f4164));
+  background: url("./images/bg-pattern-circles.svg"), linear-gradient(90deg, #2c2d3f, #3f4164);
+  background-position: -235% 90%;
+  background-repeat: no-repeat;
+  position: relative;
+  border-bottom-left-radius: 90px;
+  border-top-right-radius: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .section_two .phones {
+  position: absolute;
+  top: -55px;
+  left: 110px;
+}
+
+body .section_two .section_two_content {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: 80px;
+  padding: 50px 0;
+}
+
+body .section_two .section_two_content h2 {
+  margin-bottom: 20px;
+}
+
+body .section_two .section_two_content P {
+  line-height: 25px;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+body .section_three {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+body .section_three .section_three_text {
+  max-width: 400px;
+  margin-right: 130px;
+}
+
+body .section_three .section_three_text h2 {
+  margin-bottom: 20px;
+}
+
+body .section_three .section_three_text P {
+  line-height: 25px;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+body .section_three img {
+  position: relative;
+  right: 225px;
+}
+
 body footer {
   background-color: #25252d;
   color: #c8c8cb;
@@ -190,7 +333,7 @@ body footer .footer_nav {
   font-size: 14px;
 }
 
-body footer .footer_nav li {
+body footer .footer_nav li:not(.nav_list_header) {
   margin-bottom: 15px;
   cursor: pointer;
 }
@@ -201,7 +344,7 @@ body footer .footer_nav li.nav_list_header {
   color: white;
 }
 
-body footer .footer_nav li:hover {
+body footer .footer_nav li:not(.nav_list_header):hover {
   text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
