@@ -178,10 +178,10 @@ input:focus {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.712);
+  cursor: not-allowed;
 }
 .calculator-wrapper .calculator .tip-result-wrapper .btn-reset:hover {
   background-color: hsl(185deg, 41%, 84%);
-  cursor: not-allowed;
 }
 .calculator-wrapper .calculator .tip-result-wrapper .btn-reset:active {
   transform: scale(0.98);
