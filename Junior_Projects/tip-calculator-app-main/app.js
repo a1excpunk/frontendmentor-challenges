@@ -22,31 +22,30 @@ function clearInputDefaultValue(element) {
   });
 }
 
-function calculateTipPerPerson(totalBill, personQuantity, tipPersent) {
+function calcTipPerPerson(totalBill, personQuantity, tipPersent) {
   let result = (totalBill / personQuantity) * (Number(tipPersent) / 100);
   return result.toFixed(2);
 }
 
-function calculateTotalPerPerson(totalBill, personQuantity, tipPersent) {
+function calcTotalPerPerson(totalBill, personQuantity, tipPersent) {
   let result = ((totalBill / personQuantity) * (tipPersent / 100)) + (totalBill / personQuantity);
   return result.toFixed(2);
 }
 
 // Event handlers
-BillInput.addEventListener("keyup", () => {
+
+BillInput.addEventListener("kedown", () => {
   bill = parseInt(BillInput.value, 10);
-  ResetBtn.style.cursor = 'pointer';
 });
 
-CustomTipInput.addEventListener("keyup", () => {
+CustomTipInput.addEventListener("kedown", () => {
   tip = parseInt(CustomTipInput.value, 10);
-  ResetBtn.style.cursor = 'pointer';
 });
 
-NumberOfPeopleInput.addEventListener("keyup", () => {
+NumberOfPeopleInput.addEventListener("kedown", () => {
   people = parseInt(NumberOfPeopleInput.value, 10);
-  ResetBtn.style.cursor = 'pointer';
 });
+
 
 BillInput.addEventListener("focus", clearInputDefaultValue(BillInput));
 
@@ -54,7 +53,7 @@ NumberOfPeopleInput.addEventListener("focus", clearInputDefaultValue(NumberOfPeo
 
 TipPercentBtns.forEach((tipBtn) => {
   tipBtn.addEventListener("click", (el) => {
-    console.log(el.target.value);
+    console.log(el.target);
     console.log(parseInt(el.target.defaultValue, 10));
   });
 });
@@ -65,4 +64,5 @@ ResetBtn.addEventListener("click", () => {
   NumberOfPeopleInput.value = "";
   TipPerPerson.innerText = "0.00";
   TotalPerPerson.innerText = "0.00";
+  TipPercentBtns.forEach((btn) => btn.classList.remove("selected-tip"));
 });

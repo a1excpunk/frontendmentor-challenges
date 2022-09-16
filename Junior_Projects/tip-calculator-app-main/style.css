@@ -123,6 +123,18 @@ input:focus {
 .calculator-wrapper .calculator .tip-input-wrapper .tip-wrapper .btn-tip-percent:hover::placeholder {
   color: hsl(183deg, 100%, 15%);
 }
+.calculator-wrapper .calculator .tip-input-wrapper .tip-wrapper .selected-tip {
+  background-color: hsl(172deg, 67%, 45%);
+}
+.calculator-wrapper .calculator .tip-input-wrapper .tip-wrapper .selected-tip::-moz-placeholder {
+  color: hsl(183deg, 100%, 15%);
+}
+.calculator-wrapper .calculator .tip-input-wrapper .tip-wrapper .selected-tip:-ms-input-placeholder {
+  color: hsl(183deg, 100%, 15%);
+}
+.calculator-wrapper .calculator .tip-input-wrapper .tip-wrapper .selected-tip::placeholder {
+  color: hsl(183deg, 100%, 15%);
+}
 .calculator-wrapper .calculator .tip-input-wrapper .tip-wrapper input::-moz-placeholder {
   text-align: center;
 }
@@ -167,29 +179,34 @@ input:focus {
   height: 100%;
   fill: hsl(172deg, 67%, 45%);
 }
-.calculator-wrapper .calculator .tip-result-wrapper .btn-reset {
-  width: 100%;
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc {
+  display: flex;
+  gap: 20px;
+}
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc .btn-reset,
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc .btn-calculate {
+  flex: 30%;
   color: hsl(183deg, 100%, 15%);
   background-color: hsl(172deg, 67%, 45%);
-  opacity: 0.2;
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 700;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.712);
-  cursor: not-allowed;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
 }
-.calculator-wrapper .calculator .tip-result-wrapper .btn-reset:hover {
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc .btn-reset:hover,
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc .btn-calculate:hover {
+  transition-duration: 250ms;
   background-color: hsl(185deg, 41%, 84%);
 }
-.calculator-wrapper .calculator .tip-result-wrapper .btn-reset:active {
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc .btn-reset:active,
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc .btn-calculate:active {
   transform: scale(0.98);
 }
-
-.selected-tip {
-  color: hsl(183deg, 100%, 15%);
-  background-color: hsl(172deg, 67%, 45%);
+.calculator-wrapper .calculator .tip-result-wrapper .btns-res-calc .btn-calculate {
+  flex: 70%;
 }
 
 .error-msg {
