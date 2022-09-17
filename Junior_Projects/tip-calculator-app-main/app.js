@@ -14,6 +14,7 @@ const TipPerPerson = document.getElementById("tip-amount");
 const TotalPerPerson = document.getElementById("total-amount");
 
 const ResetBtn = document.querySelector(".btn-reset");
+const CalcBtn = document.querySelector(".btn-calculate");
 
 // Global Functions
 function clearInputDefaultValue(element) {
@@ -22,7 +23,7 @@ function clearInputDefaultValue(element) {
   });
 }
 
-function calcTipPerPerson(totalBill, personQuantity, tipPersent) {
+function calcTipPerPerson(totalBill = 100, personQuantity = 2, tipPersent = 20) {
   let result = (totalBill / personQuantity) * (Number(tipPersent) / 100);
   return result.toFixed(2);
 }
@@ -34,17 +35,14 @@ function calcTotalPerPerson(totalBill, personQuantity, tipPersent) {
 
 // Event handlers
 
-BillInput.addEventListener("kedown", () => {
-  bill = parseInt(BillInput.value, 10);
-});
+// BillInput.addEventListener("kedown", () => {
+// });
 
-CustomTipInput.addEventListener("kedown", () => {
-  tip = parseInt(CustomTipInput.value, 10);
-});
+// CustomTipInput.addEventListener("kedown", () => {
+// });
 
-NumberOfPeopleInput.addEventListener("kedown", () => {
-  people = parseInt(NumberOfPeopleInput.value, 10);
-});
+// NumberOfPeopleInput.addEventListener("kedown", () => {
+// });
 
 
 BillInput.addEventListener("focus", clearInputDefaultValue(BillInput));
@@ -66,3 +64,16 @@ ResetBtn.addEventListener("click", () => {
   TotalPerPerson.innerText = "0.00";
   TipPercentBtns.forEach((btn) => btn.classList.remove("selected-tip"));
 });
+
+CalcBtn.addEventListener('click', () => {
+  bill = parseInt(BillInput.value, 10);
+  tip = parseInt(CustomTipInput.value, 10);
+  people = parseInt(NumberOfPeopleInput.value, 10);
+
+  console.log(bill, tip, people);
+  if (bill == NaN || tip == NaN || people == NaN) {
+    TipPerPerson.innerText = '0.00'
+  } else {
+    TipPerPerson.innerText = calcTipPerPerson(bill, people, tip)
+  }
+})
