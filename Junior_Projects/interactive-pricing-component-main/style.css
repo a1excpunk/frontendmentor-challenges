@@ -42,6 +42,11 @@ html body .headline h1 {
   font-weight: 800;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 550px) {
+  html body .headline h1 {
+    font-size: 1.5rem;
+  }
+}
 html body .headline h4 {
   font-size: 1rem;
   color: hsl(225deg, 20%, 60%);
@@ -50,6 +55,7 @@ html body .headline h4 {
 html body .card-wrapper {
   max-width: 550px;
   margin: auto;
+  min-width: 350px;
   background-color: hsl(0deg, 0%, 100%);
   margin-bottom: 150px;
   border-radius: 20px;
@@ -64,6 +70,16 @@ html body .card-wrapper .card-top .prices-views-container {
   padding: 50px;
   padding-bottom: 0;
   row-gap: 20px;
+}
+@media screen and (max-width: 550px) {
+  html body .card-wrapper .card-top .prices-views-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+  }
+  html body .card-wrapper .card-top .prices-views-container #price-range {
+    grid-row: 2/3;
+  }
 }
 html body .card-wrapper .card-top .prices-views-container .page-views {
   letter-spacing: 2px;
@@ -82,6 +98,7 @@ html body .card-wrapper .card-top .prices-views-container #price-range {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
+  width: 100%;
 }
 html body .card-wrapper .card-top .prices-views-container #price-range::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -115,6 +132,11 @@ html body .card-wrapper .card-top .billing-container {
   flex-wrap: nowrap;
   gap: 55px;
   margin: 50px;
+}
+@media screen and (max-width: 550px) {
+  html body .card-wrapper .card-top .billing-container {
+    margin: 50px 20px;
+  }
 }
 html body .card-wrapper .card-top .billing-container .monthly-billing input#billing {
   display: none;

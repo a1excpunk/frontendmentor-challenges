@@ -54,6 +54,9 @@ html {
         color: $Dark_Desaturated_Blue;
         font-weight: 800;
         margin-bottom: 10px;
+        @media screen and (max-width: 550px) {
+          font-size: 1.5rem;
+        }
       }
 
       h4 {
@@ -67,6 +70,7 @@ html {
     .card-wrapper {
       max-width: 550px;
       margin: auto;
+      min-width: 350px;
 
       background-color: $White;
       margin-bottom: 150px;
@@ -84,6 +88,16 @@ html {
           padding: 50px;
           padding-bottom: 0;
           row-gap: 20px;
+
+          @media screen and (max-width: 550px) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-items: center;
+
+            #price-range {
+              grid-row: 2/3;
+            }
+          }
           .page-views {
             letter-spacing: 2px;
             font-weight: 800;
@@ -103,6 +117,7 @@ html {
             grid-column: 1/ -1;
             -webkit-appearance: none;
             appearance: none;
+            width: 100%;
             &::-webkit-slider-thumb {
               -webkit-appearance: none;
               appearance: none;
@@ -112,7 +127,7 @@ html {
               cursor: pointer;
               height: 50px;
               width: 50px;
-              background: url('./images/icon-slider.svg'),$Strong_Cyan;
+              background: url("./images/icon-slider.svg"), $Strong_Cyan;
               background-repeat: no-repeat;
               background-position: center;
               &:active {
@@ -129,9 +144,9 @@ html {
               border: none;
             }
 
-            &:focus::-webkit-slider-runnable-track {
-              // background: #367ebd;
-            }
+            // &:focus::-webkit-slider-runnable-track {
+            //   background: #367ebd;
+            // }
           }
         }
 
@@ -142,6 +157,9 @@ html {
           flex-wrap: nowrap;
           gap: 55px;
           margin: 50px;
+          @media screen and (max-width: 550px) {
+            margin: 50px 20px;
+          }
           .monthly-billing {
             // checkbox
             input#billing {
