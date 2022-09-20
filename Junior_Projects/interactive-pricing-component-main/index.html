@@ -16,27 +16,25 @@
   <main class="card-wrapper">
     <section class="card-top">
       <div>
-        <div id="page-views">Pageviews</div>
+        <div id="page-views"><span id="pageviews"></span> Pageviews</div>
         <div class="price-per-month">$<span id="price"></span> /month</div>
+        <input type="range" id="price-range">
       </div>
-      <input type="range" id="price-range">
+
       <div>
         <span> Monthly Billing</span>
         <input type="checkbox" id="billing">
-        <span>Yearly Billing  <span class="discount">25% discount</span></span>
+        <span>Yearly Billing <span class="discount">25% discount</span></span>
       </div>
     </section>
     <section class="card-bottom">
-      <div class="pros">
-        <ul>
-          <li>Unlimited websites</li>
-          <li>100% data ownership</li>
-          <li>Email reports</li>
-        </ul>
-      </div>
-      <div class="btn">
-        <button type="button" aria-label="Start Trial">Start my trial</button>
-      </div>
+      <ul class="pros">
+        <li>Unlimited websites</li>
+        <li>100% data ownership</li>
+        <li>Email reports</li>
+      </ul>
+
+      <button class="btn" type="button" aria-label="Start Trial">Start my trial</button>
     </section>
   </main>
   <footer class="attribution">
