@@ -1,0 +1,246 @@
+//Primary
+
+$Soft_Cyan: hsl(174, 77%, 80%);
+$Strong_Cyan: hsl(174, 86%, 45%);
+$Strong_Cyan_Shadow: hsla(174, 87%, 50%, 0.1);
+$Strong_Cyan_Hover: hsl(174, 86%, 38%);
+$Light_Grayish_Red: hsl(14, 92%, 95%);
+$Light_Red: hsl(15, 100%, 70%);
+$Pale_Blue: hsl(226, 100%, 87%);
+
+//Neutral
+
+$White: hsl(0, 0%, 100%);
+$Very_Pale_Blue: hsl(230, 100%, 99%);
+$Lighter_Grayish_Blue: hsl(224, 65%, 95%);
+$Light_Grayish_Blue: hsl(223, 50%, 87%);
+$Grayish_Blue: hsl(225, 20%, 60%);
+$Dark_Desaturated_Blue: hsl(227, 35%, 25%);
+
+p,
+h1,
+h4,
+span,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: url("./images/bg-pattern.svg"), $Very_Pale_Blue;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  height: 100%;
+  body {
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    max-width: 1440px;
+    height: 100%;
+    ::selection {
+      background-color: transparent;
+    }
+    .headline {
+      max-width: 500px;
+      margin: 50px auto;
+      text-align: center;
+      background-image: url("./images/pattern-circles.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 150px;
+      h1 {
+        font-size: 1.9rem;
+        color: $Dark_Desaturated_Blue;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        font-size: 1rem;
+        color: $Grayish_Blue;
+        font-weight: 600;
+      }
+    }
+
+    // card
+    .card-wrapper {
+      max-width: 550px;
+      margin: auto;
+
+      background-color: $White;
+      margin-bottom: 150px;
+      border-radius: 20px;
+      min-width: 350px;
+
+      color: $Grayish_Blue;
+
+      .card-top {
+        .prices-views-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          align-items: center;
+          padding: 50px;
+          padding-bottom: 0;
+          row-gap: 20px;
+          .page-views {
+            letter-spacing: 2px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 14px;
+          }
+          .price-per-month {
+            #price,
+            .dollar-sign {
+              color: $Dark_Desaturated_Blue;
+              font-size: 40px;
+              font-weight: 800;
+            }
+          }
+
+          #price-range {
+            grid-column: 1/ -1;
+            -webkit-appearance: none;
+            appearance: none;
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              margin-top: -22px;
+              box-shadow: 0px 10px 30px $Strong_Cyan;
+              border-radius: 50%;
+              cursor: pointer;
+              height: 50px;
+              width: 50px;
+              background: url('./images/icon-slider.svg'),$Strong_Cyan;
+              background-repeat: no-repeat;
+              background-position: center;
+              &:active {
+                background-color: $Strong_Cyan_Hover;
+                cursor: grabbing;
+              }
+            }
+
+            &::-webkit-slider-runnable-track {
+              height: 8px;
+              cursor: pointer;
+              background: $Lighter_Grayish_Blue;
+              border-radius: 20px;
+              border: none;
+            }
+
+            &:focus::-webkit-slider-runnable-track {
+              // background: #367ebd;
+            }
+          }
+        }
+
+        .billing-container {
+          font-size: 12px;
+          display: flex;
+          justify-content: center;
+          flex-wrap: nowrap;
+          gap: 55px;
+          margin: 50px;
+          .monthly-billing {
+            // checkbox
+            input#billing {
+              display: none;
+            }
+            label.pseudo-checkbox {
+              margin-left: 15px;
+              position: relative;
+              cursor: pointer;
+              &::after {
+                content: "";
+                z-index: 1;
+                position: absolute;
+                width: 40px;
+                height: 20px;
+                border-radius: 20px;
+                background-color: $Light_Grayish_Blue;
+                transition-duration: 500ms;
+              }
+              &::before {
+                content: "";
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                top: 3px;
+                left: 4px;
+                border-radius: 50%;
+                background-color: $White;
+                z-index: 2;
+                transition-duration: 500ms;
+              }
+            }
+            //###### TODO cooler checkbox animation
+            input#billing:checked ~ label::after {
+              background-color: $Strong_Cyan;
+            }
+            input#billing:checked ~ label::before {
+              left: 22px;
+            }
+          }
+          //discount
+          .discount {
+            background-color: $Light_Grayish_Red;
+            color: $Light_Red;
+            border-radius: 20px;
+            font-size: 10px;
+            padding: 2px 8px;
+          }
+        }
+      }
+
+      .card-bottom {
+        border-top: 1px solid $Lighter_Grayish_Blue;
+        margin-top: 30px;
+        padding: 30px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 150px;
+        @media screen and (max-width: 550px) {
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+        }
+        ul.pros {
+          padding-inline-start: 20px;
+          margin: 0;
+          list-style-image: url("./images/icon-check.svg");
+          font-size: 12px;
+          color: $Grayish_Blue;
+          li {
+            margin: 10px 0;
+          }
+        }
+        button.btn {
+          border: none;
+          border-radius: 30px;
+          padding: 12px 40px;
+          font-size: 14px;
+          background-color: $Dark_Desaturated_Blue;
+          color: $Pale_Blue;
+          cursor: pointer;
+
+          &:hover {
+            //###### TODO cooler checkbox animation
+            color: $White;
+            transition-duration: 500ms;
+          }
+        }
+      }
+    }
+
+    .attribution {
+      text-align: center;
+      font-size: 12px;
+      color: $Grayish_Blue;
+      a {
+        color: $Light_Red;
+      }
+    }
+  }
+}

@@ -1,1 +1,209 @@
-/*# sourceMappingURL=style.css.map */
+p,
+h1,
+h4,
+span,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: url("./images/bg-pattern.svg"), hsl(230deg, 100%, 99%);
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  height: 100%;
+}
+html body {
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  max-width: 1440px;
+  height: 100%;
+}
+html body ::-moz-selection {
+  background-color: transparent;
+}
+html body ::selection {
+  background-color: transparent;
+}
+html body .headline {
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  background-image: url("./images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+}
+html body .headline h1 {
+  font-size: 1.9rem;
+  color: hsl(227deg, 35%, 25%);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+html body .headline h4 {
+  font-size: 1rem;
+  color: hsl(225deg, 20%, 60%);
+  font-weight: 600;
+}
+html body .card-wrapper {
+  max-width: 550px;
+  margin: auto;
+  background-color: hsl(0deg, 0%, 100%);
+  margin-bottom: 150px;
+  border-radius: 20px;
+  min-width: 350px;
+  color: hsl(225deg, 20%, 60%);
+}
+html body .card-wrapper .card-top .prices-views-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  padding: 50px;
+  padding-bottom: 0;
+  row-gap: 20px;
+}
+html body .card-wrapper .card-top .prices-views-container .page-views {
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+html body .card-wrapper .card-top .prices-views-container .price-per-month #price,
+html body .card-wrapper .card-top .prices-views-container .price-per-month .dollar-sign {
+  color: hsl(227deg, 35%, 25%);
+  font-size: 40px;
+  font-weight: 800;
+}
+html body .card-wrapper .card-top .prices-views-container #price-range {
+  grid-column: 1/-1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+html body .card-wrapper .card-top .prices-views-container #price-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -22px;
+  box-shadow: 0px 10px 30px hsl(174deg, 86%, 45%);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  background: url("./images/icon-slider.svg"), hsl(174deg, 86%, 45%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html body .card-wrapper .card-top .prices-views-container #price-range::-webkit-slider-thumb:active {
+  background-color: hsl(174deg, 86%, 38%);
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+html body .card-wrapper .card-top .prices-views-container #price-range::-webkit-slider-runnable-track {
+  height: 8px;
+  cursor: pointer;
+  background: hsl(224deg, 65%, 95%);
+  border-radius: 20px;
+  border: none;
+}
+html body .card-wrapper .card-top .billing-container {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 55px;
+  margin: 50px;
+}
+html body .card-wrapper .card-top .billing-container .monthly-billing input#billing {
+  display: none;
+}
+html body .card-wrapper .card-top .billing-container .monthly-billing label.pseudo-checkbox {
+  margin-left: 15px;
+  position: relative;
+  cursor: pointer;
+}
+html body .card-wrapper .card-top .billing-container .monthly-billing label.pseudo-checkbox::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: hsl(223deg, 50%, 87%);
+  transition-duration: 500ms;
+}
+html body .card-wrapper .card-top .billing-container .monthly-billing label.pseudo-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 3px;
+  left: 4px;
+  border-radius: 50%;
+  background-color: hsl(0deg, 0%, 100%);
+  z-index: 2;
+  transition-duration: 500ms;
+}
+html body .card-wrapper .card-top .billing-container .monthly-billing input#billing:checked ~ label::after {
+  background-color: hsl(174deg, 86%, 45%);
+}
+html body .card-wrapper .card-top .billing-container .monthly-billing input#billing:checked ~ label::before {
+  left: 22px;
+}
+html body .card-wrapper .card-top .billing-container .discount {
+  background-color: hsl(14deg, 92%, 95%);
+  color: hsl(15deg, 100%, 70%);
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 2px 8px;
+}
+html body .card-wrapper .card-bottom {
+  border-top: 1px solid hsl(224deg, 65%, 95%);
+  margin-top: 30px;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 150px;
+}
+@media screen and (max-width: 550px) {
+  html body .card-wrapper .card-bottom {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+html body .card-wrapper .card-bottom ul.pros {
+  -webkit-padding-start: 20px;
+          padding-inline-start: 20px;
+  margin: 0;
+  list-style-image: url("./images/icon-check.svg");
+  font-size: 12px;
+  color: hsl(225deg, 20%, 60%);
+}
+html body .card-wrapper .card-bottom ul.pros li {
+  margin: 10px 0;
+}
+html body .card-wrapper .card-bottom button.btn {
+  border: none;
+  border-radius: 30px;
+  padding: 12px 40px;
+  font-size: 14px;
+  background-color: hsl(227deg, 35%, 25%);
+  color: hsl(226deg, 100%, 87%);
+  cursor: pointer;
+}
+html body .card-wrapper .card-bottom button.btn:hover {
+  color: hsl(0deg, 0%, 100%);
+  transition-duration: 500ms;
+}
+html body .attribution {
+  text-align: center;
+  font-size: 12px;
+  color: hsl(225deg, 20%, 60%);
+}
+html body .attribution a {
+  color: hsl(15deg, 100%, 70%);
+}/*# sourceMappingURL=style.css.map */

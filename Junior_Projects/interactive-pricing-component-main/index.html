@@ -6,25 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Interactive pricing component</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
+  <header class="headline">
     <h1>Simple, traffic-based pricing</h1>
     <h4> Sign-up for our 30-day trial. No credit card required. </h4>
   </header>
   <main class="card-wrapper">
     <section class="card-top">
-      <div>
-        <div id="page-views"><span id="pageviews"></span> Pageviews</div>
-        <div class="price-per-month">$<span id="price"></span> /month</div>
+      <div class="prices-views-container">
+        <div class="page-views"><span id="pageviews">100</span>k Pageviews</div>
+        <div class="price-per-month"><span class="dollar-sign">$</span><span id="price">16.00</span> / month</div>
         <input type="range" id="price-range">
       </div>
 
-      <div>
-        <span> Monthly Billing</span>
-        <input type="checkbox" id="billing">
-        <span>Yearly Billing <span class="discount">25% discount</span></span>
+      <div class="billing-container">
+        <div class="monthly-billing">
+          <span> Monthly Billing</span>
+          <input type="checkbox" id="billing">
+          <label for="billing" class="pseudo-checkbox"></label>
+        </div>
+        <p>Yearly Billing <span class="discount">25% discount</span></p>
       </div>
     </section>
     <section class="card-bottom">
