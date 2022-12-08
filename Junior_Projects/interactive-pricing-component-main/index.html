@@ -20,11 +20,11 @@
   <main class="card-wrapper">
     <section class="card-top">
       <div class="prices-views-container">
-        <div class="page-views"><span id="pageviews">100</span>k Pageviews</div>
-        <div class="price-per-month"><span class="dollar-sign">$</span><span id="price">16.00</span> / month</div>
-        <input type="range" id="price-range">
+        <div class="page-views"><span id="pageviews"></span>k Pageviews</div>
+        <div class="price-per-month"><span class="dollar-sign">$</span><span id="price"></span> / month</div>
+        <input type="range" id="price-range" value="20" step="20">
+        <!-- <progress id="price-range" max="100" value="70"></progress> -->
       </div>
-
       <div class="billing-container">
         <div class="monthly-billing">
           <span> Monthly Billing</span>
@@ -48,6 +48,42 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://www.frontendmentor.io/profile/a1excpunk">A1ex</a>.
   </footer>
+  <script>
+    let price = document.getElementById('price');
+    let pageViews = document.getElementById('pageviews');
+    let priceRange = document.getElementById('price-range');
+    price.textContent = "16.00";
+    pageViews.textContent = 100;
+
+    priceRange.addEventListener('input', (e) => {
+      switch (e.target.value) {
+        case '0':
+          price.textContent = "00.00";
+          pageViews.textContent = 0;
+          break;
+        case '20':
+          price.textContent = "16.00";
+          pageViews.textContent = 100;
+          break;
+        case '40':
+          price.textContent = "20.00";
+          pageViews.textContent = 150;
+          break;
+        case '60':
+          price.textContent = "33.00";
+          pageViews.textContent = 200;
+          break;
+        case '80':
+          price.textContent = "50.00";
+          pageViews.textContent = 350;
+          break;
+        case '100':
+          price.textContent = "75.00";
+          pageViews.textContent = 500;
+          break;
+      }
+    })
+  </script>
 </body>
 
 </html>
