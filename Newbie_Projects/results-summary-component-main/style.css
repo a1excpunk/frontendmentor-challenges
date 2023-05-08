@@ -1,0 +1,104 @@
+body {
+  background-color: hsl(0, 0%, 100%);
+  max-width: 1440px;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
+}
+body main {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 5px 5px 30px hsl(221, 100%, 96%);
+  display: flex;
+  max-width: 700px;
+  border-radius: 20px;
+}
+body main .resultContainer {
+  border-radius: 20px;
+  background-image: linear-gradient(0deg, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+  flex: 1;
+}
+body main .summaryContainer {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+body main .summaryContainer .summaryContant {
+  padding: 40px;
+}
+body main .summaryContainer .summaryContant h1 {
+  font-weight: 800;
+  color: hsl(224, 30%, 27%);
+  font-size: 23px;
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .summaryStats {
+  margin: 20px 0;
+  font-size: 20px;
+  background-color: hsl(0, 100%, 67%);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .summaryStats::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  border-radius: 10px;
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .summaryStats img {
+  margin-right: 5px;
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .red {
+  color: hsl(0, 100%, 67%);
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .green {
+  color: hsl(166, 100%, 37%);
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .yellow {
+  color: hsl(39, 100%, 56%);
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .blue {
+  color: hsl(234, 85%, 45%);
+  background-color: hsla(234, 85%, 45%, 0.1);
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .summaryResult {
+  color: hsl(224, 30%, 27%);
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .maxScore {
+  color: hsla(224, 30%, 27%, 0.5);
+  font-weight: 800;
+}
+body main .summaryContainer .summaryContant button {
+  background-color: hsl(224, 30%, 27%);
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  padding: 15px;
+  color: hsl(0, 0%, 100%);
+}
+body .attribution {
+  position: absolute;
+  bottom: 20px;
+}/*# sourceMappingURL=style.css.map */
