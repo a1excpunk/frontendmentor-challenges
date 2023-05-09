@@ -29,52 +29,44 @@
         <div class="summaryContant">
           <h1>Summary</h1>
           <div class="summaryStatsContainer">
-            <div class="summaryStats red">
+            <div class="summaryStats redBox">
               <div>
-                <img
-                  src="./assets/images/icon-reaction.svg"
-                  alt="lightning icon"
-                />
-                Reaction
+                <img src="" alt=" icon" id="reactionIcon" />
+                <span id="reactionCategory"></span>
               </div>
-              <span class="summaryResult"
-                >80 <span class="maxScore">/ 100</span>
+              <span class="summaryResult">
+                <span id="reactionScore"></span>
+                <span class="maxScore">/ 100</span>
               </span>
             </div>
-            <div class="summaryStats yellow">
+            <div class="summaryStats yellowBox">
               <div>
-                <img
-                  src="./assets/images/icon-memory.svg"
-                  alt="lightning icon"
-                />
-                Memory
+                <img src="" alt=" icon" id="memoryIcon" />
+                <span id="memoryCategory"></span>
               </div>
-              <span class="summaryResult"
-                >92 <span class="maxScore">/ 100</span>
+              <span class="summaryResult">
+                <span id="memoryScore"></span>
+                <span class="maxScore">/ 100</span>
               </span>
             </div>
-            <div class="summaryStats green">
+            <div class="summaryStats greenBox">
               <div>
-                <img
-                  src="./assets/images/icon-verbal.svg"
-                  alt="lightning icon"
-                />
-                Verbal
+                <img src="" alt=" icon" id="verbalIcon" />
+                <span id="verbalCategory"></span>
               </div>
-              <span class="summaryResult"
-                >61 <span class="maxScore">/ 100</span>
+              <span class="summaryResult">
+                <span id="verbalScore"></span>
+                <span class="maxScore">/ 100</span>
               </span>
             </div>
-            <div class="summaryStats blue">
+            <div class="summaryStats blueBox">
               <div>
-                <img
-                  src="./assets/images/icon-visual.svg"
-                  alt="lightning icon"
-                />
-                Visual
+                <img src="" alt=" icon" id="visualIcon" />
+                <span id="visualCategory"></span>
               </div>
-              <span class="summaryResult"
-                >72 <span class="maxScore">/ 100</span>
+              <span class="summaryResult">
+                <span id="visualScore"></span>
+                <span class="maxScore">/ 100</span>
               </span>
             </div>
           </div>
@@ -92,5 +84,46 @@
       >. Coded by
       <a href="https://www.frontendmentor.io/profile/a1excpunk">a1excpunk</a>.
     </div>
+
+    <script>
+      let reactionCategory = document.getElementById("reactionCategory");
+      let memoryCayegory = document.getElementById("memoryCayegory");
+      let verbalCategory = document.getElementById("verbalCategory");
+      let visualCategory = document.getElementById("visualCategory");
+      let reactionIcon = document.getElementById("reactionIcon");
+      let memoryIcon = document.getElementById("memoryIcon");
+      let verbalIcon = document.getElementById("verbalIcon");
+      let visualIcon = document.getElementById("visualIcon");
+      let reactionScore = document.getElementById("reactionScore");
+      let memoryScore = document.getElementById("memoryScore");
+      let verbalScore = document.getElementById("verbalScore");
+      let visualScore = document.getElementById("visualScore");
+
+      async function getSummaryScore() {
+        const res = await fetch("./data.json");
+        const jsonData = await res.json();
+        // icon
+        reactionIcon.src = jsonData[0]["icon"];
+        memoryIcon.src = jsonData[1]["icon"];
+        verbalIcon.src = jsonData[2]["icon"];
+        visualIcon.src = jsonData[3]["icon"];
+
+        //category
+        reactionCategory.textContent = jsonData[0]["category"];
+        memoryCategory.textContent = jsonData[1]["category"];
+        verbalCategory.textContent = jsonData[2]["category"];
+        visualCategory.textContent = jsonData[3]["category"];
+
+        //score
+        reactionScore.textContent = jsonData[0]["score"];
+        memoryScore.textContent = jsonData[1]["score"];
+        verbalScore.textContent = jsonData[2]["score"];
+        visualScore.textContent = jsonData[3]["score"];
+
+        console.log(jsonData);
+      }
+
+      getSummaryScore();
+    </script>
   </body>
 </html>
