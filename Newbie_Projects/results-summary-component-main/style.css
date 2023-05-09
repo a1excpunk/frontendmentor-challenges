@@ -67,19 +67,19 @@ body main .summaryContainer .summaryContant .summaryStatsContainer .summaryStats
 body main .summaryContainer .summaryContant .summaryStatsContainer .summaryStats img {
   margin-right: 5px;
 }
-body main .summaryContainer .summaryContant .summaryStatsContainer .red {
+body main .summaryContainer .summaryContant .summaryStatsContainer .redBox {
   color: hsl(0, 100%, 67%);
   background-color: hsla(0, 100%, 67%, 0.1);
 }
-body main .summaryContainer .summaryContant .summaryStatsContainer .green {
-  color: hsl(166, 100%, 37%);
-  background-color: hsla(166, 100%, 37%, 0.1);
-}
-body main .summaryContainer .summaryContant .summaryStatsContainer .yellow {
+body main .summaryContainer .summaryContant .summaryStatsContainer .yellowBox {
   color: hsl(39, 100%, 56%);
   background-color: hsla(39, 100%, 56%, 0.1);
 }
-body main .summaryContainer .summaryContant .summaryStatsContainer .blue {
+body main .summaryContainer .summaryContant .summaryStatsContainer .greenBox {
+  color: hsl(166, 100%, 37%);
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+body main .summaryContainer .summaryContant .summaryStatsContainer .blueBox {
   color: hsl(234, 85%, 45%);
   background-color: hsla(234, 85%, 45%, 0.1);
 }
