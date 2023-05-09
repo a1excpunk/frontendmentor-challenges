@@ -97,6 +97,29 @@ body main .summaryContainer .summaryContant button {
   width: 100%;
   padding: 15px;
   color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  position: relative;
+  transition: background 800ms ease-in;
+  z-index: 1;
+}
+body main .summaryContainer .summaryContant button::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  border-radius: 50px;
+  transition: opacity 1200ms;
+  opacity: 0;
+  z-index: -1;
+  background-image: linear-gradient(0deg, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+}
+body main .summaryContainer .summaryContant button:hover {
+  background-color: transparent;
+}
+body main .summaryContainer .summaryContant button:hover::after {
+  opacity: 1;
 }
 body .attribution {
   position: absolute;
