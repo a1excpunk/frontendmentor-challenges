@@ -1,0 +1,31 @@
+.error_invalidDate,
+.error_outOfRangeDate,
+.error_required {
+  color: hsl(0, 100%, 67%);
+}
+
+.error {
+  border-color: hsl(0, 100%, 67%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+body label {
+  display: block;
+}
+body label input {
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 32px;
+  font-weight: 800;
+}/*# sourceMappingURL=style.css.map */
