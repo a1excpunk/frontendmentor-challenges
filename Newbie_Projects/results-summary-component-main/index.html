@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;500;700;800&display=swap"
       rel="stylesheet"
     />
     <title>Frontend Mentor | Results summary component</title>
@@ -21,8 +21,17 @@
   <body>
     <main>
       <article class="resultContainer">
-        Your Result 76 of 100 Great You scored higher than 65% of the people who
-        have taken these tests.
+        <p class="greyText">Your Result</p>
+        <div class="resultScoreContainer">
+          <span class="currentScore">76</span>
+          <span class="maxToalScore">of 100</span>
+        </div>
+        <div class="resultinWordsContainer">
+          <p>Great</p>
+          <p>
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
       </article>
 
       <article class="summaryContainer">
