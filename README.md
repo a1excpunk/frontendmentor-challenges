@@ -32,6 +32,8 @@
 
 [Product Preview Card](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/product-preview-card-component-main/)
 
+[Resuls Summary Component](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Components/results-summary-component-main/)
+
 ###### Pages
 
 [Ping Comming Soon](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Pages/ping-coming-soon-page-master/)
