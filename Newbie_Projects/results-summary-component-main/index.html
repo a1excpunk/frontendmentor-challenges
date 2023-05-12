@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Results summary component</title>
+  </head>
+  <body>
+    <main>
+      <article class="resultContainer">
+        <p class="greyText">Your Result</p>
+        <div class="resultScoreContainer">
+          <span class="currentScore">76</span>
+          <span class="maxToalScore">of 100</span>
+        </div>
+        <div class="resultinWordsContainer">
+          <p>Great</p>
+          <p>
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+      </article>
+
+      <article class="summaryContainer">
+        <div class="summaryContant">
+          <h1>Summary</h1>
+          <div class="summaryStatsContainer">
+            <div class="summaryStats redBox">
+              <div>
+                <img src="" alt=" icon" id="reactionIcon" />
+                <span id="reactionCategory"></span>
+              </div>
+              <span class="summaryResult">
+                <span id="reactionScore"></span>
+                <span class="maxScore">/ 100</span>
+              </span>
+            </div>
+            <div class="summaryStats yellowBox">
+              <div>
+                <img src="" alt=" icon" id="memoryIcon" />
+                <span id="memoryCategory"></span>
+              </div>
+              <span class="summaryResult">
+                <span id="memoryScore"></span>
+                <span class="maxScore">/ 100</span>
+              </span>
+            </div>
+            <div class="summaryStats greenBox">
+              <div>
+                <img src="" alt=" icon" id="verbalIcon" />
+                <span id="verbalCategory"></span>
+              </div>
+              <span class="summaryResult">
+                <span id="verbalScore"></span>
+                <span class="maxScore">/ 100</span>
+              </span>
+            </div>
+            <div class="summaryStats blueBox">
+              <div>
+                <img src="" alt=" icon" id="visualIcon" />
+                <span id="visualCategory"></span>
+              </div>
+              <span class="summaryResult">
+                <span id="visualScore"></span>
+                <span class="maxScore">/ 100</span>
+              </span>
+            </div>
+          </div>
+          <button>Continue</button>
+        </div>
+      </article>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/a1excpunk">a1excpunk</a>.
+    </div>
+
+    <script>
+      let reactionCategory = document.getElementById("reactionCategory");
+      let memoryCayegory = document.getElementById("memoryCayegory");
+      let verbalCategory = document.getElementById("verbalCategory");
+      let visualCategory = document.getElementById("visualCategory");
+      let reactionIcon = document.getElementById("reactionIcon");
+      let memoryIcon = document.getElementById("memoryIcon");
+      let verbalIcon = document.getElementById("verbalIcon");
+      let visualIcon = document.getElementById("visualIcon");
+      let reactionScore = document.getElementById("reactionScore");
+      let memoryScore = document.getElementById("memoryScore");
+      let verbalScore = document.getElementById("verbalScore");
+      let visualScore = document.getElementById("visualScore");
+
+      async function getSummaryScore() {
+        const res = await fetch("./data.json");
+        const jsonData = await res.json();
+        // icon
+        reactionIcon.src = jsonData[0]["icon"];
+        memoryIcon.src = jsonData[1]["icon"];
+        verbalIcon.src = jsonData[2]["icon"];
+        visualIcon.src = jsonData[3]["icon"];
+
+        //category
+        reactionCategory.textContent = jsonData[0]["category"];
+        memoryCategory.textContent = jsonData[1]["category"];
+        verbalCategory.textContent = jsonData[2]["category"];
+        visualCategory.textContent = jsonData[3]["category"];
+
+        //score
+        reactionScore.textContent = jsonData[0]["score"];
+        memoryScore.textContent = jsonData[1]["score"];
+        verbalScore.textContent = jsonData[2]["score"];
+        visualScore.textContent = jsonData[3]["score"];
+
+        console.log(jsonData);
+      }
+
+      getSummaryScore();
+    </script>
+  </body>
+</html>
