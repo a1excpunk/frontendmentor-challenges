@@ -1,7 +1,7 @@
 body {
   background-color: hsl(0, 0%, 100%);
   max-width: 1440px;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,11 @@ body * {
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 18px;
 }
+@media screen and (max-width: 500px) {
+  body {
+    justify-content: flex-start;
+  }
+}
 body main {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 5px 5px 30px hsl(221, 100%, 96%);
@@ -22,10 +27,76 @@ body main {
   max-width: 700px;
   border-radius: 20px;
 }
+@media screen and (max-width: 500px) {
+  body main {
+    flex-direction: column;
+  }
+}
 body main .resultContainer {
   border-radius: 20px;
   background-image: linear-gradient(0deg, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width: 500px) {
+  body main .resultContainer {
+    border-radius: 0 0 20px 20px;
+    gap: 65px;
+    padding: 30px 0;
+  }
+}
+body main .resultContainer .greyText {
+  color: hsl(241, 100%, 89%);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+body main .resultContainer .resultScoreContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+body main .resultContainer .resultScoreContainer::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -30px;
+  z-index: -1;
+  box-shadow: 1px 1px 10px hsla(256, 72%, 46%, 0.5);
+  background-image: linear-gradient(180deg, hsl(256, 72%, 46%), rgba(0, 0, 0, 0));
+  opacity: 0.8;
+  border-radius: 100%;
+}
+body main .resultContainer .resultScoreContainer .currentScore {
+  color: hsl(0, 0%, 100%);
+  font-size: 3.75rem;
+  font-weight: 700;
+}
+body main .resultContainer .resultScoreContainer .maxToalScore {
+  color: hsl(221, 100%, 96%);
+  opacity: 0.7;
+  font-weight: 200;
+}
+body main .resultContainer .resultinWordsContainer {
+  width: 60%;
+  text-align: center;
+}
+body main .resultContainer .resultinWordsContainer p:first-of-type {
+  margin-bottom: 20px;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.56rem;
+  font-weight: 700;
+}
+body main .resultContainer .resultinWordsContainer p:nth-of-type(2) {
+  color: hsl(0, 0%, 100%);
+  font-weight: 200;
+  font-size: 0.94rem;
 }
 body main .summaryContainer {
   background-color: hsl(0, 0%, 100%);
@@ -86,12 +157,13 @@ body main .summaryContainer .summaryContant .summaryStatsContainer .blueBox {
 body main .summaryContainer .summaryContant .summaryStatsContainer .summaryResult {
   color: hsl(224, 30%, 27%);
 }
-body main .summaryContainer .summaryContant .summaryStatsContainer .maxScore {
+body main .summaryContainer .summaryContant .summaryStatsContainer .summaryResult .maxScore {
   color: hsla(224, 30%, 27%, 0.5);
   font-weight: 800;
 }
 body main .summaryContainer .summaryContant button {
   background-color: hsl(224, 30%, 27%);
+  box-shadow: 1px 1px 5px hsla(224, 30%, 27%, 0.5);
   border: none;
   border-radius: 50px;
   width: 100%;
@@ -99,7 +171,7 @@ body main .summaryContainer .summaryContant button {
   color: hsl(0, 0%, 100%);
   cursor: pointer;
   position: relative;
-  transition: background 800ms ease-in;
+  transition: background 500ms ease-in;
   z-index: 1;
 }
 body main .summaryContainer .summaryContant button::after {
@@ -110,18 +182,28 @@ body main .summaryContainer .summaryContant button::after {
   top: 0;
   right: 0;
   border-radius: 50px;
-  transition: opacity 1200ms;
+  transition: opacity 500ms;
   opacity: 0;
   z-index: -1;
   background-image: linear-gradient(0deg, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
 }
-body main .summaryContainer .summaryContant button:hover {
-  background-color: transparent;
-}
 body main .summaryContainer .summaryContant button:hover::after {
   opacity: 1;
+}
+body main .summaryContainer .summaryContant button:active {
+  box-shadow: none;
 }
 body .attribution {
   position: absolute;
   bottom: 20px;
+  font-size: 14px;
+}
+body .attribution a {
+  font-size: 0.938rem;
+}
+@media screen and (max-width: 500px) {
+  body .attribution {
+    position: static;
+    margin: 100px 0 10px 0;
+  }
 }/*# sourceMappingURL=style.css.map */
