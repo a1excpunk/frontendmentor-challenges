@@ -98,6 +98,21 @@ body main form button img {
 body main form button:hover {
   background-color: hsl(0, 0%, 8%);
 }
+@media screen and (max-width: 700px) {
+  body main {
+    background-color: aqua;
+  }
+  body main form {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+  }
+  body main form button {
+    grid-column: 2;
+    place-self: center;
+    width: 100px;
+    height: 100px;
+  }
+}
 body .hide {
   display: none;
   position: absolute;
