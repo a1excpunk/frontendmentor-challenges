@@ -2,10 +2,16 @@
 .error_outOfRangeDate,
 .error_required {
   color: hsl(0, 100%, 67%);
+  font-weight: 200;
+  font-style: italic;
+  letter-spacing: initial;
+  text-transform: none;
+  font-size: 11px;
+  margin-top: 8px;
 }
 
 .error {
-  border-color: hsl(0, 100%, 67%);
+  outline: 1px solid hsl(0, 100%, 67%);
 }
 
 * {

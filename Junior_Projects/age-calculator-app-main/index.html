@@ -33,6 +33,7 @@
         <label for="day">
           <span> Day </span>
           <input type="number" name="day" id="day" placeholder="DD" />
+          <!-- <span class="error_outOfRangeDate">Must be a valid day</span> -->
         </label>
         <label for="month">
           <span> Month </span>
@@ -73,13 +74,49 @@
     <span class="error_required hide">This field is required</span>
 
     <script>
-      let day = document.getElementById("day");
+      let inputDay = document.getElementById("day");
+      let inputMonth = document.getElementById("month");
+      let inputYear = document.getElementById("year");
       let submitBtn = document.getElementById("submit");
+      let calcDay = document.getElementById("calcDay");
+      let calcMonth = document.getElementById("calcMonth");
+      let calcYear = document.getElementById("calcYear");
       let form = document.getElementsByName("form");
       submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        calculateAge(
+          Number(inputDay.value),
+          Number(inputMonth.value),
+          Number(inputYear.value)
+        );
+        outOfRangeDateError();
       });
-      // day.classList.add('error')
+
+      function calculateAge(input_day, input_month, input_year) {
+        let now = new Date();
+        let input_date = new Date(input_year, input_month - 1, input_day);
+        let diff = now.getTime() - input_date.getTime();
+        console.log(
+          "years " + Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25))
+        );
+        console.log("months " + Math.floor(diff / (1000 * 60 * 60 * 24 * 12)));
+        console.log("days " + Math.floor(diff / (1000 * 60 * 60 * 24)));
+      }
+
+      function outOfRangeDateError() {
+        if (inputDay.value > 31 || inputDay.value <= 0) {
+          console.error("Must be a valid day");
+          day.classList.add("error");
+        }
+        if (inputMonth.value > 12 || inputMonth.value <= 0) {
+          console.error("Must be a valid month");
+          month.classList.add("error");
+        }
+        if (inputYear.value > new Date().getFullYear()) {
+          console.error("Must be a valid year");
+          year.classList.add("error");
+        }
+      }
     </script>
   </body>
 </html>
