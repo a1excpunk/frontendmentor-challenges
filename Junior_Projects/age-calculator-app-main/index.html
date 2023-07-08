@@ -94,6 +94,11 @@
     <span class="error_required hide">This field is required</span>
 
     <script>
+      let error_invalidDate = document.querySelector(".error_invalidDate");
+      let error_outOfRangeDate = document.querySelector(
+        ".error_outOfRangeDate"
+      );
+      let error_required = document.querySelector(".error_required");
       let inputDay = document.getElementById("day");
       let inputMonth = document.getElementById("month");
       let inputYear = document.getElementById("year");
@@ -109,21 +114,66 @@
           Number(inputMonth.value),
           Number(inputYear.value)
         );
-        outOfRangeDateError();
+        resetErorrClasses();
+        emptyInputError();
+        outOfDateRangeError();
       });
+
+      function resetErorrClasses() {
+        day.classList.remove("error");
+        month.classList.remove("error");
+        year.classList.remove("error");
+        error_invalidDate.classList.add("hide");
+        error_outOfRangeDate.classList.add("hide");
+        error_required.classList.add("hide");
+      }
 
       function calculateAge(input_day, input_month, input_year) {
         let now = new Date();
         let input_date = new Date(input_year, input_month - 1, input_day);
         let diff = now.getTime() - input_date.getTime();
-        console.log(
-          "years " + Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25))
+
+        calcDay.children[0].textContent = Math.floor(
+          diff / (1000 * 60 * 60 * 24)
         );
-        console.log("months " + Math.floor(diff / (1000 * 60 * 60 * 24 * 12)));
-        console.log("days " + Math.floor(diff / (1000 * 60 * 60 * 24)));
+        calcMonth.children[0].textContent = Math.floor(
+          diff / (1000 * 60 * 60 * 24 * 12)
+        );
+        calcYear.children[0].textContent = Math.floor(
+          diff / (1000 * 60 * 60 * 24 * 365.25)
+        );
       }
 
-      function outOfRangeDateError() {
+      function emptyInputError() {
+        if (inputDay.value == "") {
+          error_required.classList.remove("hide");
+        }
+        if (inputMonth.value == "") {
+          error_required.classList.remove("hide");
+        }
+        if (inputYear.value == "") {
+          error_required.classList.remove("hide");
+        }
+      }
+
+      function outOfDateRangeError() {
+        //months out of range erorrs
+        if (
+          (inputMonth.value == 4 ||
+            inputMonth.value == 6 ||
+            inputMonth.value == 9 ||
+            inputMonth.value == 11) &&
+          inputDay.value > 30
+        ) {
+          console.error("This month can't have more than 30 days");
+          day.classList.add("error");
+        }
+        if (inputMonth.value == 2 && inputDay.value > 28) {
+          console.error("February can't have more than 28 days");
+          day.classList.add("error");
+        }
+
+        //general date errors
         if (inputDay.value > 31 || inputDay.value <= 0) {
           console.error("Must be a valid day");
           day.classList.add("error");
@@ -132,7 +182,11 @@
           console.error("Must be a valid month");
           month.classList.add("error");
         }
-        if (inputYear.value > new Date().getFullYear()) {
+        if (
+          inputYear.value > new Date().getFullYear() ||
+          inputYear.value == "" ||
+          inputYear.value < 0
+        ) {
           console.error("Must be a valid year");
           year.classList.add("error");
         }
