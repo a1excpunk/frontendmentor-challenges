@@ -32,23 +32,42 @@
       <form action="" method="post">
         <label for="day">
           <span> Day </span>
-          <input type="number" name="day" id="day" placeholder="DD" />
+          <input
+            type="number"
+            name="day"
+            id="day"
+            placeholder="DD"
+            maxlength="2"
+          />
           <!-- <span class="error_outOfRangeDate">Must be a valid day</span> -->
         </label>
         <label for="month">
           <span> Month </span>
-          <input type="number" name="month" id="month" placeholder="MM" />
+          <input
+            type="number"
+            name="month"
+            id="month"
+            placeholder="MM"
+            maxlength="2"
+          />
         </label>
         <label for="year">
           <span> Year </span>
-          <input type="number" name="year" id="year" placeholder="YYYY" />
+          <input
+            type="number"
+            name="year"
+            id="year"
+            placeholder="YYYY"
+            maxlength="4"
+          />
         </label>
         <button type="submit" id="submit">
           <img src="./assets/images/icon-arrow.svg" alt="arrow icon" />
         </button>
       </form>
+
       <div class="calculatedResContainer">
-        <div id="calcDay">
+        <div id="calcYear">
           <span class="calculatedNums">--</span>
           <span> years</span>
         </div>
@@ -56,12 +75,13 @@
           <span class="calculatedNums">--</span>
           <span> months</span>
         </div>
-        <div id="calcYear">
+        <div id="calcDay">
           <span class="calculatedNums">--</span>
           <span> days</span>
         </div>
       </div>
     </main>
+
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
