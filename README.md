@@ -1,6 +1,6 @@
-# FronEndMentor challenge solutions
+# FronEndMentor challenge solutions 
 
-### Newbie
+## Newbie
 
 ###### Components
 
@@ -42,7 +42,7 @@
 
 [Huddle Landing Page](https://a1excpunk.github.io/frontendmentor-challenges/Newbie_Projects/Done/Pages/huddle-landing-page-with-single-introductory-section-master/)
 
-### Junior
+## Junior
 
 ###### Components
 
@@ -59,3 +59,7 @@
 ###### Apps
 
 [Tip Calculator ... in process](https://a1excpunk.github.io/frontendmentor-challenges/Junior_Projects/Done/Components/tip-calculator-app-main/)
+
+
+## Intermediate
+## Advanced
